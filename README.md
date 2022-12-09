@@ -47,7 +47,7 @@ This application comprises the web interface and Rest APIs.
 
 
 **E2E Tests**
-- Cypress is needed to be installed. The tests are located in [E2E](E2E)
+- Cypress is needed to be installed. The tests are located in [cypress](cypress)
 
 
 **Continuous Integration (CI)**
