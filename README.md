@@ -15,7 +15,6 @@ This application comprises the web interface and Rest APIs.
 
 ## Resources
 
-- [API document](API.md)
 - [The swagger documentation](http://178.128.192.92:8080/swagger-ui.html)
 - [Web Application](http://178.128.192.92:9000/)
 
@@ -37,7 +36,7 @@ This application comprises the web interface and Rest APIs.
 
 - **Maven** Download and install maven
 - **Java JDK** Java JDK 1.8 or greater
-- **MySQL** - Load the DB Schema from [model/src/main/resources/sql](model/src/main/resources/sql)
+- **MySQL** 
 - **Oracle SQL Developer**
 - **Eclipse IDE** or **Jetbrain IntelliJ**
 
