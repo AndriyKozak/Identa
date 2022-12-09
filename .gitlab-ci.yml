@@ -1,0 +1,49 @@
+image: maven:3.8.1-jdk-11
+
+stages:
+  - build
+  - test
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+
+cache:
+  paths:
+    - .m2/repository/
+
+build:
+  stage: build
+  script:
+    - mvn $MAVEN_CLI_OPTS clean compile -DskipTests
+
+test:
+  stage: test
+  script:
+    - mvn $MAVEN_CLI_OPTS clean compile test
+    - cat jacoco-report/target/site/jacoco-aggregate/index.html
+  artifacts:
+    when: always
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: jacoco-report/target/site/jacoco-aggregate/jacoco.xml
+      junit:
+        - model/target/surefire-reports/TEST-*.xml
+        - model/target/failsafe-reports/TEST-*.xml
+        - dao/dao-impl/target/surefire-reports/TEST-*.xml
+        - dao/dao-impl/target/failsafe-reports/TEST-*.xml
+        - service/service-impl/target/surefire-reports/TEST-*.xml
+        - service/service-impl/target/failsafe-reports/TEST-*.xml
+        - rest-service-api/target/surefire-reports/TEST-*.xml
+        - rest-service-api/target/failsafe-reports/TEST-*.xml
+        - web/target/surefire-reports/TEST-*.xml
+        - web/target/failsafe-reports/TEST-*.xml
+
+postman-tests:
+  stage: test
+  image:
+    name: postman/newman_alpine33
+    entrypoint: [""]
+  script:
+    - newman --version
+    - newman run postman/Identa.postman_collection.json -e postman/Identa.postman_environment.json --reporters cli --color on
