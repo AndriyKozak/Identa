@@ -1,8 +1,8 @@
 {
   "users":{ 
     "admin":{
-      "email": "admin@identa.io",
-      "password": "password"
+      "email": "username@identa.io",
+      "password": "Password1"
     },
 
     "client":{
