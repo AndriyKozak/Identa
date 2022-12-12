@@ -6,6 +6,8 @@ Project is coded in Java, JSP, CSS, JS, Spring Boot and MySQL. It follows the mi
 can have multiple clients (mobile applications, web ui) using an API Gateway which handles all the requests and apply
 the required business logics to crud any data depending on the user access.
 
+<ins>The code-base of the project is hidden except directories related to testing:</ins> ([postman](postman) - 'API tests', and [cypress](cypress) - 'E2E tests')
+
 ## Description
 
 Identa is a multi tenancy application that allows the users to register one or more restaurants and manage their
@@ -47,11 +49,9 @@ This application comprises the web interface and Rest APIs.
 
 
 **E2E Tests**
-- Will be developed with Cypress. The tests location: [cypress](cypress)
+- Cypress is needed to be installed. The E2E tests location: [cypress](cypress)
 
 
 **Continuous Integration (CI)**
 
 The project is build on GitLab using Gitlab pipelines as configure in the [.gitlab-ci.yml](.gitlab-ci.yml)
-
-
