@@ -50,7 +50,7 @@ postman-tests:
     
  E2E-tests:
   stage: test
-  image: cypress/browsers:node12.14.1-chrome85-ff81
+  image: cypress/browsers:node16.17.0-chrome106
   script:
     # install dependencies
     - npm ci
