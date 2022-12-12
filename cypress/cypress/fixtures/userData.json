@@ -1,0 +1,17 @@
+{
+  "users":{ 
+    "admin":{
+      "email": "admin@identa.io",
+      "password": "password"
+    },
+
+    "client":{
+      "firstName": "ClientFirtsName",
+      "lastName": "ClientLastName",
+      "tenantName": "E2E tenant",
+      "tenantDescription": " E2E Tenant description",
+      "email": "e2e.client@identa.io",
+      "password": "password"
+    }
+  }
+}
