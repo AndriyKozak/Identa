@@ -17,7 +17,7 @@ describe('Registration', () => {
     cy.register(users.client)
     cy.login(users.admin)
 
-    //Check if the new Company/Tenant has been created
+    //Check if the new Company/Tenant has been created and is present in a Tenants grid
     cy.contains('Tenants').click({force: true})
     cy.url().should('include', '/tenants')
     
@@ -29,7 +29,7 @@ describe('Registration', () => {
         })
 
 
-    //Check if the new client has been created
+    //Check if the new client has been created and is present in a Users grid
     cy.contains('Users').click({force: true})
     cy.url().should('include', '/users')
 
